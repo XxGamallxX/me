@@ -20,7 +20,7 @@ const ProfilePopup = () => {
 
   return (
     <div className={styles.container} ref={containerRef}>
-      <button className={styles.button} onClick={togglePopup}><img src="./public/Rafeeq/userpic.png" alt="" /></button>
+      <button className={styles.button} onClick={togglePopup}><img src="./public/Rafeeq/userpic.png" alt="profile" /></button>
       {open && (
         <div className={styles.popup}>
           <p className={styles.info}>John Doe</p>

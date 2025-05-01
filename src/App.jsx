@@ -12,7 +12,7 @@ import ReportPage from './pages/ReportPage';
 function App() {
   return (
     <Router>
-      <div id="App">
+      <div classname="App">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
