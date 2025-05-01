@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // Import pages
 import LandingPage from './pages/LandingPage';
@@ -10,7 +12,7 @@ import ReportPage from './pages/ReportPage';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div id="App">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />

@@ -1,0 +1,14 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    font-family: "poppins", sans-serif;
+  }
+
+
+
+
+  @media (max-width: 576px) {
+    html {
+      font-size: 0.85rem;
+    }
+  }

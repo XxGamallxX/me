@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./LandingPage.css";
 
 const LandingPage = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-
+//delete
   useEffect(() => {
     const currentUser = localStorage.getItem('currentUser');
     if (currentUser) {

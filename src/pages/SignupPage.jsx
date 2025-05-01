@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import  "./SignupPage.css";
+import { v4 as uuidv4 } from 'uuid';
 
+
+
+
+const id = uuidv4()
+console.log(id)
 const SignupPage = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
@@ -58,129 +65,131 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title text-center mb-4">Sign Up</h2>
-              <div className="progress mb-4">
-                <div
-                  className="progress-bar"
-                  role="progressbar"
-                  style={{ width: `${step === 1 ? '50%' : '100%'}` }}
-                />
-              </div>
-              {step === 1 ? (
-                <form onSubmit={handleNext}>
-                  <div className="mb-3">
-                    <label htmlFor="fullName" className="form-label">Full Name</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="phone" className="form-label">Phone Number</label>
-                    <input
-                      type="tel"
-                      className="form-control"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="yearOfBirth" className="form-label">Year of Birth</label>
-                    <select
-                      className="form-select"
-                      id="yearOfBirth"
-                      name="yearOfBirth"
-                      value={formData.yearOfBirth}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select Year</option>
-                      {years.map(year => (
-                        <option key={year} value={year}>{year}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="d-grid">
-                    <button type="submit" className="btn btn-primary">Next</button>
-                  </div>
-                </form>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="password"
-                      name="password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="d-grid gap-2">
-                    <button type="button" className="btn btn-secondary" onClick={() => setStep(1)}>
-                      Back
+  <>
+    <div className='myauthbg '>
+    <div className="container pt-4 "> 
+       <h3 className='m-3 position-absolute'>Rafeeq</h3>
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card form-container">
+              <div className="card-body">
+                <h2 className="card-title text-center mb-4">Sign Up</h2>
+
+                {step === 1 ? (
+                  <form onSubmit={handleNext}>
+                    <h3>Welcome to Rafeeq!</h3>
+                    <h5 >Together, we fix what matters. Sign up and get started. </h5>
+                    <div className="mb-3">
+                      <label htmlFor="fullName" className="form-label">Full Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="fullName"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
+                        />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="email" className="form-label">Email address</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="phone" className="form-label">Phone Number</label>
+                      <input
+                        type="tel"
+                        className="form-control"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="yearOfBirth" className="form-label">Year of Birth</label>
+                      <select
+                        className="form-select"
+                        id="yearOfBirth"
+                        name="yearOfBirth"
+                        value={formData.yearOfBirth}
+                        onChange={handleChange}
+                        required
+                        >
+                        <option value="">Select Year</option>
+                        {years.map(year => (
+                          <option key={year} value={year}>{year}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="d-grid">
+                      <button type="submit" className="btn Main-btn mx-auto">Next</button>
+                    </div>
+                  </form>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                      <label htmlFor="password" className="form-label">Password</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                        />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                        required
+                        />
+                    </div>
+                    <div className="d-grid gap-2">
+                      <button type="button" className="btn Main-btn mx-auto" onClick={() => setStep(1)}>
+                        Back
+                      </button>
+                      <button type="submit" className="btn Main-btn mx-auto">
+                        Sign Up
+                      </button>
+                    </div>
+                  </form>
+                )}
+                <div className="text-center mt-3">
+                  <p>
+                    Already have an account?
+                    <button
+                      className="btn btn-link"
+                      onClick={() => navigate('/login')}
+                      >
+                      Login
                     </button>
-                    <button type="submit" className="btn btn-primary">
-                      Sign Up
-                    </button>
-                  </div>
-                </form>
-              )}
-              <div className="text-center mt-3">
-                <p>
-                  Already have an account?{' '}
-                  <button
-                    className="btn btn-link"
-                    onClick={() => navigate('/login')}
-                  >
-                    Login
-                  </button>
-                </p>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </>
+
   );
 };
 
