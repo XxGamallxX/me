@@ -4,9 +4,55 @@ html, body, #root {
     font-family: "poppins", sans-serif;
   }
 
+  .Main-btn {
+    width: 50%;
+    height: 100%;
+    border: none;
+    background-color: #F28C28;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   
-  @media (max-width: 576px) {
+  }
+  
+  
+  .Main-btn:hover {
+    background-color: transparent;
+    color: black;
+    border-color: #F28C28;
+    border-radius: 3px;
+  }
+
+  .form-container {
+    background-color: #E5F0FB;
+  }
+
+  /* utility classes */
+  /* colors */
+  .my-colorlightblue1 {
+  color: #A8E8DF !important ;
+  }
+  .my-Bgcolorlightblue1 {
+    background-color: #C9D9F9 !important ;
+  }
+  .my-colorlightblue2 {
+  color: #CED9EF !important ;
+  }
+  .my-min-content{
+    height: min-content;
+  }
+
+  .my-m-0{
+    margin: 0;
+  }
+
+
+
+  
+  @media (max-width: 576px) , (max-height: 576px) {
     html {
-      font-size: 0.85rem;
+      font-size: 0.80rem;
     }
   }
+

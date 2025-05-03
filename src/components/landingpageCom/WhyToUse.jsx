@@ -6,7 +6,7 @@
 const WhyToUse = () => {
   return (
     <>
-    <div className="my-colorlightblue" id='WhyToUse'>
+    <div className="my-Bgcolorlightblue1" id='WhyToUse'>
       <div className="container py-5 w-50 my-Vh75 align-content-center ">
         <div className="row ">
           {/* Left Column */}

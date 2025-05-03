@@ -5,9 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-
-const id = uuidv4()
-console.log(id)
 const SignupPage = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
@@ -19,10 +16,12 @@ const SignupPage = () => {
     password: '',
     confirmPassword: '',
   });
+  
 
   // Generate years for dropdown (current year to 100 years ago)
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 101 }, (_, i) => currentYear - i);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +30,7 @@ const SignupPage = () => {
       [name]: value
     }));
   };
+
 
   const handleNext = (e) => {
     e.preventDefault();
@@ -51,6 +51,7 @@ const SignupPage = () => {
       return;
     }
     // Store user data in localStorage
+    // delete
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     users.push({
       email: formData.email,

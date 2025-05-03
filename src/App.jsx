@@ -12,15 +12,16 @@ import ReportPage from './pages/ReportPage';
 function App() {
   return (
     <Router>
-      <div classname="App">
+
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/report" element={<ReportPage />} />
+          <Route path="/Submit report" element={<ReportPage />} />
           <Route path="*" element={<Navigate to="/" />} />
+          {/* <Route path='/Track Report' element={<TrackReport />} /> */}
         </Routes>
-      </div>
+ 
     </Router>
   );
 }

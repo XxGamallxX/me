@@ -1,9 +1,9 @@
 import "./LandingPage.css";
-import AboutUs from "../components/AboutUs";
-import Footer from "../components/Footer";
-import Home from "../components/Home";
-import WhyToUse from "../components/WhyToUse";
-import NavBar from "../components/NavBar";
+import AboutUs from "../components/landingpageCom/AboutUs";
+import Footer from "../components/landingpageCom/Footer";
+import Home from "../components/landingpageCom/Header";
+import WhyToUse from "../components/landingpageCom/WhyToUse";
+import NavBar from "../components/landingpageCom/NavBar";
 
 
 
@@ -13,7 +13,7 @@ import NavBar from "../components/NavBar";
 const LandingPage = () => {
   return (
     <>
-      <NavBar/>
+  
       <Home />
       <AboutUs />
       <WhyToUse />

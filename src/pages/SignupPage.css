@@ -1,30 +1,10 @@
-.Main-btn {
-  width: 50%;
-  height: 100%;
-  border: none;
-  background-color: #F28C28;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 
-}
-
-
-.Main-btn:hover {
-  background-color: transparent;
-  color: black;
-  border-color: #F28C28;
-  border-radius: 3px;
-}
 
 .my-Blacklink{
   color: black;
 }
 
-.form-container {
-  background-color: #E5F0FB;
-}
+
 
 .myauthbg {
   width: 100%;
