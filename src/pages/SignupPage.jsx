@@ -133,7 +133,7 @@ const SignupPage = () => {
                       </select>
                     </div>
                     <div className="d-grid">
-                      <button type="submit" className="btn Main-btn mx-auto">Next</button>
+                      <button type="submit" className="Main-btn mx-auto">Next</button>
                     </div>
                   </form>
                 ) : (
@@ -163,10 +163,10 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="d-grid gap-2">
-                      <button type="button" className="btn Main-btn mx-auto" onClick={() => setStep(1)}>
+                      <button type="button" className="Main-btn mx-auto" onClick={() => setStep(1)}>
                         Back
                       </button>
-                      <button type="submit" className="btn Main-btn mx-auto">
+                      <button type="submit" className="Main-btn mx-auto">
                         Sign Up
                       </button>
                     </div>

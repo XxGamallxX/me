@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ReportPage from './pages/ReportPage';
+import TrackReport from './pages/TrackReport';
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/Submit report" element={<ReportPage />} />
+          <Route path="/Submit Report" element={<ReportPage />} />
           <Route path="*" element={<Navigate to="/" />} />
-          {/* <Route path='/Track Report' element={<TrackReport />} /> */}
+          <Route path='/Track Report' element={<TrackReport />} />
         </Routes>
  
     </Router>

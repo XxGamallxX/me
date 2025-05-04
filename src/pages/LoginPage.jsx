@@ -78,7 +78,7 @@ const LoginPage = () => {
                     />
                   </div>
                   <div className="d-grid">
-                    <button type="submit" className=" btn Main-btn mx-auto">Login</button>
+                    <button type="submit" className="Main-btn mx-auto">Login</button>
                   </div>
                 </form>
                 <div className="text-center mt-3">
