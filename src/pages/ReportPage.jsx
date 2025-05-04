@@ -14,6 +14,7 @@ const ReportPage = () => {
     streetName: "",
     link: "",
 
+
   });
   // Ensure step is 1 when component mounts
   // useEffect(() => {
@@ -72,6 +73,7 @@ const ReportPage = () => {
                   onChange={handleChange}
                   className="form-control input-shadowbox"
                   value={ReportData.issuename}
+                  required
                 />
               </div>
 
@@ -83,6 +85,7 @@ const ReportPage = () => {
                   id="issuedegree"
                   value={ReportData.issuedegree}
                   onChange={handleChange}
+                  required
                 >
                   <option value="">Select...</option>
                   <option value="easy">Easy</option>
@@ -100,6 +103,7 @@ const ReportPage = () => {
                   className="form-control input-shadowbox"
                   onChange={handleChange}
                   value={ReportData.comment}
+                  required
                 />
               </div>
 
@@ -130,7 +134,7 @@ const ReportPage = () => {
                 <input
                  name="streetName"
                 className="form-control input-shadowbox"
-                
+                required
                 >
 
                 </input>
@@ -138,6 +142,7 @@ const ReportPage = () => {
 
               </div>
               <div className="mt-3">
+                
 
 
 

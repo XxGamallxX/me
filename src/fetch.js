@@ -2,7 +2,10 @@ const userdata = {
   id: 78687987698796,
   username: "user123",
   password: "password123",
+  confirmPassword: true,
+  phone: "01208801111",
   email: "user123@example.com",
+  legalage: true,
 
 };
 
