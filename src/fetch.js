@@ -5,6 +5,7 @@ const userdata = {
   confirmPassword: true,
   phone: "01208801111",
   email: "user123@example.com",
+  emailConfirmed: true,
   legalage: true,
 
 };
@@ -21,7 +22,7 @@ fetch1()
 
 
 
-  async function getData(url = '') {
+  async function getData(url = 'https://localhost:7218/api/User') {
     try {
       console.log('Fetching from:', url);
   

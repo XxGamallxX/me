@@ -34,14 +34,28 @@ const SignupPage = () => {
 
   const handleNext = (e) => {
     e.preventDefault();
+    function isValidEmail(email) {
+      const pattern = /^[^\s@]+@(gmail\.com|yahoo\.com)$/;
+      return email.length <= 40 && pattern.test(email);
+    }
+
+    function isValidPassword(password) {
+      const pattern = /^(010|011|012|015)\d{8}$/;
+      return pattern.test(password);
+    }
+    
+
+
     if (step === 1) {
       // Validate first step
-      if (!formData.fullName || !formData.email || !formData.phone || !formData.yearOfBirth) {
+      if ((!formData.fullName || !formData.email && isValidEmail || !formData.phone && isValidPassword || !formData.yearOfBirth )) {
         alert('Please fill in all fields');
         return;
       }
       setStep(2);
     }
+
+
   };
 
   const handleSubmit = (e) => {
