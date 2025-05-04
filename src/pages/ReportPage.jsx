@@ -1,20 +1,24 @@
-import { useEffect, useState } from "react";
+import {useEffect , useState } from "react";
 import "./ReportPage.css";
 import ReportStep1 from "../components/ReportCom/ReportStep1";
+import { v4 as uuidv4 } from 'uuid';
 
 const ReportPage = () => {
   const [step, setStep] = useState(1);
 
   const [ReportData, setReportData] = useState({
+    reportid: uuidv4(),
     issuename: "",
     issuedegree: "",
-    issuedescription: "",
-  });
+    comment: "",
+    streetName: "",
+    link: "",
 
+  });
   // Ensure step is 1 when component mounts
-  useEffect(() => {
-    setStep(1);
-  }, []);
+  // useEffect(() => {
+  //   setStep(1);
+  // }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -88,14 +92,14 @@ const ReportPage = () => {
               </div>
 
               <div className="mt-3">
-                <label htmlFor="issuedescription" className="form-label">Issue Description</label>
+                <label htmlFor="comment" className="form-label">Issue Description</label>
                 <input
                   type="text"
-                  id="issuedescription"
-                  name="issuedescription"
+                  id="comment"
+                  name="comment"
                   className="form-control input-shadowbox"
                   onChange={handleChange}
-                  value={ReportData.issuedescription}
+                  value={ReportData.comment}
                 />
               </div>
 
@@ -108,9 +112,38 @@ const ReportPage = () => {
       )}
 
       {step === 2 && (
-        <div className="container text-center mt-5">
-          <h2>Step 2 Content Here</h2>
-          <ReportStep1 />
+        <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center w-100">
+          <div className="card form-container justify-content-center py-5 row flex-grow">
+            
+
+            <form onSubmit={handleSubmit}>
+              <h1>Submit Your Report</h1>
+              <div className="mt-3">
+                <img src="" alt="map" />
+                <button className="Main-btn">get your location</button>
+
+
+
+              </div>
+              <div className="mt-3">
+                <label htmlFor="streetName" className="form-label">street name</label>
+                <input
+                 name="streetName"
+                className="form-control input-shadowbox"
+                
+                >
+
+                </input>
+
+
+              </div>
+              <div className="mt-3">
+
+
+
+              </div>
+            </form>
+          </div>
         </div>
       )}
     </>

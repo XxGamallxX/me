@@ -20,6 +20,7 @@ html, body, #root {
   
   .Main-btn:hover {
     background-color: transparent;
+    color: rgb(73, 73, 73);
     border : .3125rem solid #F28C28;
   }
 
