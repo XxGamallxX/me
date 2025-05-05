@@ -16,11 +16,6 @@ const Footer = () => {
             <li className="lh-lg"><a href="#contact" className="text-decoration-none text-white " >Terms & Conditions</a></li>
             <li className="lh-lg"><a href="#contact" className="text-decoration-none text-white " >Contact Us</a></li>           
           </ul>
-          <div className="flex">
-            <a href=""><img  src="./Rafeeq/instagram.png" alt="instagram link" /></a>
-            <a href="" className="mx-4"><img src="./Rafeeq/facebook.png" alt="facebook link" /></a>
-            <a href=""><img src="./Rafeeq/linkedin.png" alt="linkedin link" /></a>
-          </div>
         </div>
       </div>
     );

@@ -22,9 +22,20 @@
   <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center w-100">
     <div className="card form-container justify-content-center py-5 row flex-grow">
     {Reports.length === 0 ? (
+
+
+
     <h1>there is no Reports submitted yet</h1>
+
+
 ) : (
-  <div>There is data</div>
+
+
+  
+  <h1>There is data</h1>
+
+
+
 )}
 
     </div>

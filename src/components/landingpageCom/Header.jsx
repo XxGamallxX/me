@@ -16,11 +16,7 @@ const Home = () => {
     }
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem('currentUser');
-    setIsLoggedIn(false);
-    setUser(null);
-  };
+
 
   
 
@@ -80,8 +76,8 @@ const Home = () => {
           <p className='my-m-0 h3 my-colorlightblue2'>Track their progress in real-time.</p>
           <p className='my-m-0 h3 my-colorlightblue2'>Be part of the change.</p>
           <div className='mt-3 d-flex justify-content-between'>
-            <button onClick={() => navigate('/Track Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3'><strong>Track Report</strong></button>
-            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3'><strong>Submit Report</strong></button>
+            <button onClick={() => navigate('/Track Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3'>Track Report</button>
+            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3'>Submit Report</button>
           </div>
 
         </div>
@@ -89,16 +85,17 @@ const Home = () => {
       </>
     ):(
     <>
-      
+      <Navbar/>
       <div className="container-fluid mt-6 vh-100 HomeBgImage d-flex justify-content-center align-items-center" id='Home'>
       <div className='container  my-min-content'>
         <h1 className='mb-5 my-colorlightblue1'><strong>Rafeeq</strong></h1>
         <p className='my-m-0 h3 my-colorlightblue2'>Report road issues around you.</p>
         <p className='my-m-0 h3 my-colorlightblue2'>Track their progress in real-time.</p>
         <p className='my-m-0 h3 my-colorlightblue2'>Be part of the change.</p>
-        <button className='Main-btn '></button>
-        <button className='Main-btn '></button>
-
+         <div className='my-min-content text-nowrap'>
+         <button className='Main-btn p-2 btn-font text-nowrap my-min-content m-3  '>Sign up</button>
+        <button className='Main-btn p-2 btn-font text-nowrap my-min-content m-3 font-weight-bold '>Login</button>
+         </div>
         </div>
       </div>
     </>

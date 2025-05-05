@@ -18,13 +18,19 @@ const ProfilePopup = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    setIsLoggedIn(false);
+    setUser(null);
+  };
+
   return (
     <div className={styles.container} ref={containerRef}>
       <button className={styles.button} onClick={togglePopup}><img src="./public/Rafeeq/userpic.png" alt="profile" /></button>
       {open && (
         <div className={styles.popup}>
           <p className={styles.info}>John Doe</p>
-          <button className={styles.logout}>Logout</button>
+          <button className={styles.logout} onClick={handleLogout} >Logout</button>
         </div>
       )}
     </div>
