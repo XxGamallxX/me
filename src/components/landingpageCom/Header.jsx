@@ -77,7 +77,7 @@ const Home = () => {
           <p className='my-m-0 h3 my-colorlightblue2'>Be part of the change.</p>
           <div className='mt-3 d-flex justify-content-between'>
             <button onClick={() => navigate('/Track Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3 p-3 my-black '><strong>Track Report</strong></button>
-            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3 my-black'><strong>Submit Report</strong></button>
+            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3 p-3 my-black'><strong>Submit Report</strong></button>
           </div>
 
         </div>

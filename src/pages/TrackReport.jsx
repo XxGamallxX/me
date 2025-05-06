@@ -5,7 +5,11 @@
 
 
    // Sample data: array of issue objects
-   const issues = [
+
+
+
+
+   const reports = [
      {
        issuename: 'Air Pollution',
        issuedegree: 'High',
@@ -26,8 +30,9 @@
 
 //   async function getreports (
 
-//   const getreportdata = await fetch("/api"),
-
+//   const getreportdata = await fetch("https://localhost:7218/api/user/{id}/reports"),
+// .then(res => res.json())
+// .then(console.log);
 
 
 
@@ -58,7 +63,7 @@
 
   <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center min-w-100 border-0">
   <div className=" form-container justify-content-center py-5 row flex-grow bg-transparent w-75">
-    {issues.length === 0 ? (
+    {reports.length === 0 ? (
 
 
 
@@ -73,7 +78,7 @@
     <h3 className='m-0 px-1'><strong >Track Report</strong></h3>
   </div>
   <div className=''>
-         {issues.map((issue, index) => (
+         {reports.map((issue, index) => (
            <div key={index} className='my-TrackReportCard p-3 my-3'>
              <h3>{issue.issuename}</h3>
              <p>{issue.issuedegree}</p>
