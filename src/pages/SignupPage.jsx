@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import  "./SignupPage.css";
+import { useState } from 'react';
+import MediaQuery from "react-responsive";
+import { NavLink, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+
 
 
 
@@ -81,23 +83,22 @@ const SignupPage = () => {
 
   return (
   <>
-    <div className='myauthbg '>
-    <div className="container pt-4 "> 
-       <h3 className='m-3 position-absolute'>Rafeeq</h3>
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <div className="card form-container">
-              <div className="card-body p-4">
-
+    <div className='myauthbg d-flex align-items-center justify-content-center '>
+    <MediaQuery minWidth={1224}>
+       <h1 className='m-3 mt-5 align-self-start text-white'><strong>RAFEEQ</strong></h1>
+    </MediaQuery>
+    
                 {step === 1 ? (
+                  <div className="w-75 pt-4 h-90 form-container d-flex my-auto justify-content-center align-items-center overflow-auto"> 
+                  <div className="w-75 h-max-content"> 
                   <form onSubmit={handleNext}>
-                    <h3>Welcome to Rafeeq!</h3>
+                    <h3><strong>Welcome to Rafeeq!</strong></h3>
                     <h5 >Together, we fix what matters. Sign up and get started. </h5>
                     <div className="mb-3">
-                      <label htmlFor="fullName" className="form-label">Full Name</label>
+                      <label htmlFor="fullName" className="color-1F2937">Full Name</label>
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control my-input"
                         id="fullName"
                         name="fullName"
                         value={formData.fullName}
@@ -106,10 +107,10 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="email" className="form-label">Email address</label>
+                      <label htmlFor="email" className="color-1F2937">Email address</label>
                       <input
                         type="email"
-                        className="form-control"
+                        className="form-control my-input"
                         id="email"
                         name="email"
                         value={formData.email}
@@ -118,10 +119,10 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="phone" className="form-label">Phone Number</label>
+                      <label htmlFor="phone" className="color-1F2937">Phone Number</label>
                       <input
                         type="tel"
-                        className="form-control"
+                        className="form-control my-input"
                         id="phone"
                         name="phone"
                         value={formData.phone}
@@ -130,7 +131,7 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="yearOfBirth" className="form-label">Year of Birth</label>
+                      <label htmlFor="yearOfBirth" className="color-1F2937">Year of Birth</label>
                       <select
                         className="form-select"
                         id="yearOfBirth"
@@ -139,7 +140,7 @@ const SignupPage = () => {
                         onChange={handleChange}
                         required
                         >
-                        <option value="">Select Year</option>
+                        <option value="" className="my-input">Select Year</option>
                         {years.map(year => (
                           <option key={year} value={year}>{year}</option>
                         ))}
@@ -148,14 +149,25 @@ const SignupPage = () => {
                     <div className="d-grid">
                       <button type="submit" className="Main-btn mx-auto">Next</button>
                     </div>
+                  <div className="d-flex justify-content-center mt-1">
+                    <p className="text-center">
+                      Already have an account?
+                      <NavLink to="/login" className="text-decoration-none color-1F2937"> Login</NavLink>
+                    </p>
+                    </div>
                   </form>
+                </div>
+              </div>
                 ) : (
-                  <form onSubmit={handleSubmit}>
+                  <div className="w-75 h-75 form-container d-flex my-auto justify-content-center align-items-center "> 
+                  <div className="w-75 h-max-content"> 
+                  <form onSubmit={handleSubmit} className="min-w-100" >
                     <div className="mb-3">
-                      <label htmlFor="password" className="form-label">Password</label>
+                      <h2><strong>Password</strong></h2>
+                      <label htmlFor="password" className="my-label">Password</label>
                       <input
                         type="password"
-                        className="form-control"
+                        className="form-control my-input"
                         id="password"
                         name="password"
                         value={formData.password}
@@ -164,10 +176,10 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+                      <label htmlFor="confirmPassword" className="my-label">Confirm Password</label>
                       <input
                         type="password"
-                        className="form-control"
+                        className="form-control my-input"
                         id="confirmPassword"
                         name="confirmPassword"
                         value={formData.confirmPassword}
@@ -184,22 +196,13 @@ const SignupPage = () => {
                       </button>
                     </div>
                   </form>
+
+                 </div>
+                </div>
                 )}
                 <div className="text-center mt-3">
-                  <p>
-                    Already have an account?
-                    <button
-                      className="btn btn-link"
-                      onClick={() => navigate('/login')}
-                      >
-                      Login
-                    </button>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+               
       </div>
     </div>
   </>

@@ -1,27 +1,64 @@
- 
+   import React, { useState } from 'react';
  
  
  
 
-  import React, { useState } from 'react';
+
+   // Sample data: array of issue objects
+   const issues = [
+     {
+       issuename: 'Air Pollution',
+       issuedegree: 'High',
+       comment: 'Needs immediate attention',
+       region: 'Cairo',
+       government: 'Ministry of Environment',
+     },
+     {
+       issuename: 'Traffic Congestion',
+       issuedegree: 'Medium',
+       comment: 'Peak hours problematic',
+       region: 'Giza',
+       government: 'Transport Authority',
+     },
+     
+   ];
+
+
+//   async function getreports (
+
+//   const getreportdata = await fetch("/api"),
+
+
+
+
+// )
+
+  
 
   const TrackReport = () => {
-    const Reports = [
-      { id: '1', name: 'Alice', email: 'alice@gmail.com' },
-      { id: '2', name: 'Bob', email: 'bob@yahoo.com' },
-      { id: '3', name: 'Charlie', email: 'charlie@gmail.com' },
-      { id: '4', name: 'Dana', email: 'dana@yahoo.com' },
-      { id: '5', name: 'Ethan', email: 'ethan@gmail.com' },
-    ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   return (
 
 
 
-  <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center w-100">
-    <div className="card form-container justify-content-center py-5 row flex-grow">
-    {Reports.length === 0 ? (
+  <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center min-w-100 border-0">
+  <div className=" form-container justify-content-center py-5 row flex-grow bg-transparent w-75">
+    {issues.length === 0 ? (
 
 
 
@@ -29,10 +66,27 @@
 
 
 ) : (
+<>
+
+  <div className='d-flex my-TrackReportCard align-items-center '>
+    <img src="./Rafeeq/back-btn.png" alt="back button" className='h6 m-0 crusor-pointer' />
+    <h3 className='m-0 px-1'><strong >Track Report</strong></h3>
+  </div>
+  <div className=''>
+         {issues.map((issue, index) => (
+           <div key={index} className='my-TrackReportCard p-3 my-3'>
+             <h3>{issue.issuename}</h3>
+             <p>{issue.issuedegree}</p>
+             <p>{issue.comment}</p>
+             <p>
+               {issue.government}, {issue.region}
+             </p>
+           </div>
+         ))}
+       </div>
+</>
 
 
-  
-  <h1>There is data</h1>
 
 
 

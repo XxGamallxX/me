@@ -25,6 +25,7 @@ height: max-content;
 border-radius: 1.25rem;
 gap: .625rem;
 padding: .625rem;
+border: 0 !important;
 
 }
 

@@ -1,6 +1,5 @@
-import {useEffect , useState } from "react";
 import "./ReportPage.css";
-import ReportStep1 from "../components/ReportCom/ReportStep1";
+import {useEffect , useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 const ReportPage = () => {

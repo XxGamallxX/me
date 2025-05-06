@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import "./LoginPage.css";
+import MediaQuery from 'react-responsive';
 
 
 const LoginPage = () => {
@@ -40,13 +41,14 @@ const LoginPage = () => {
 
   return (
     <>
-      <h3 className='m-3 '>Rafeeq</h3>
-      <div className="container mt-5">
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <div className="card">
-              <div className="card-body">
-                <h2 className="card-title text-center mb-4">Login</h2>
+        <div className='myauthbg d-flex align-items-center justify-content-center '>
+    <MediaQuery minWidth={1224}>
+       <h1 className='m-3 mt-5 align-self-start text-white'><strong>RAFEEQ</strong></h1>
+    </MediaQuery>
+      <div className="w-75 h-75 form-container d-flex my-auto justify-content-center align-items-center "> 
+      <div className="w-75 h-max-content"> 
+                <h2 className="card-title "><strong>Login</strong></h2>
+                <p className='m-0 py-2'>Your city needs you — log in and take action</p>
                 {error && (
                   <div className="alert alert-danger" role="alert">
                     {error}
@@ -54,10 +56,10 @@ const LoginPage = () => {
                 )}
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
+                    <label htmlFor="email" className="my-label">Email address</label>
                     <input
                       type="email"
-                      className="form-control"
+                      className="form-control my-input"
                       id="email"
                       name="email"
                       value={formData.email}
@@ -66,10 +68,10 @@ const LoginPage = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
+                    <label htmlFor="password" className="my-label">Password</label>
                     <input
                       type="password"
-                      className="form-control"
+                      className="form-control my-input"
                       id="password"
                       name="password"
                       value={formData.password}
@@ -85,18 +87,14 @@ const LoginPage = () => {
                   <p>
                     Don't have an account?{' '}
                     <button
-                      className="btn btn-link"
-                      onClick={() => navigate('/signup')}
-                    >
-                      Sign up
+                      className="btn btn-link">
+                      <NavLink to="/signup" className="text-decoration-none color-1F2937"> Sign up</NavLink>
                     </button>
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> 
     </>
   );
 };

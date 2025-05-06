@@ -1,7 +1,7 @@
 html, body, #root {
     height: 100%;
     margin: 0;
-    font-family: "poppins", sans-serif;
+    font-family: "poppins", sans-serif !important;
   }
 
   .Main-btn {
@@ -13,16 +13,12 @@ html, body, #root {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    border-radius: 20px;
+    border-radius: 5px;
   
   }
   
   
-  .Main-btn:hover {
-    background-color: transparent;
-    color: rgb(73, 73, 73);
-    border : .3125rem solid #F28C28;
-  }
+
 
   .input-shadowbox {
     box-shadow: .3125rem .9375rem .25rem 0px #00000040;
@@ -37,6 +33,14 @@ html, body, #root {
   .my-colorlightblue1 {
   color: #A8E8DF !important ;
   }
+
+
+.my-TrackReportCard{
+  background-color: #EAF1FF !important;
+  border-radius: 20px;
+  border: #0A1F44 2px solid;
+}
+
   .my-Bgcolorlightblue1 {
     background-color: #C9D9F9 !important ;
   }
@@ -51,12 +55,42 @@ html, body, #root {
     margin: 0;
   }
 
+  .my-input{
+    border: #0A1F44 solid !important;
+  }
+
+  .h-90{
+height: 90%;
+  }
+
+  .h-max-content{
+    height: max-content;
+  }
+
+  .color-1F2937{
+    font-weight: bold;
+    color: #1F2937;
+  }
+
+
+  .text-bold{
+    font-weight: 500 !important;
+  }
+
+  .my-black {
+    color: #0D182D !important;
+  }
+
+.crusor-pointer{
+  cursor: pointer;
+}
+
 
 
   
   @media (max-width: 576px) , (max-height: 576px) {
     html {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
     }
   }
 

@@ -18,18 +18,18 @@ const Navbar = () => {
           {/* Right Links */}
           <ul className="navbar-nav ms-auto d-flex flex-row gap-3">
             <li className="nav-item">
-              <button className="btn btn-link nav-link text-white" onClick={() => scrollToSection('Home')}>
+              <button className="btn btn-link nav-link text-light font-weight-light " onClick={() => scrollToSection('Home')}>
                 Home
               </button>
             </li>
             <li className="nav-item">
-              <button className="btn btn-link nav-link text-white" onClick={() => scrollToSection('AboutUs')}>
+              <button className="btn btn-link nav-link text-light font-weight-light " onClick={() => scrollToSection('AboutUs')}>
                 About us
               </button>
             </li>
             <li className="nav-item">
-              <button className="btn btn-link nav-link text-white" onClick={() => scrollToSection('WhyToUse')}>
-                Why to use
+              <button className="btn btn-link nav-link text-light font-weight-light " onClick={() => scrollToSection('WhyToUse')}>
+                Why to use?
               </button>
             </li>
           </ul>

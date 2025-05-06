@@ -76,8 +76,8 @@ const Home = () => {
           <p className='my-m-0 h3 my-colorlightblue2'>Track their progress in real-time.</p>
           <p className='my-m-0 h3 my-colorlightblue2'>Be part of the change.</p>
           <div className='mt-3 d-flex justify-content-between'>
-            <button onClick={() => navigate('/Track Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3'>Track Report</button>
-            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3'>Submit Report</button>
+            <button onClick={() => navigate('/Track Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3 p-3 my-black '><strong>Track Report</strong></button>
+            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage h1 my-3 my-black'><strong>Submit Report</strong></button>
           </div>
 
         </div>
@@ -93,8 +93,8 @@ const Home = () => {
         <p className='my-m-0 h3 my-colorlightblue2'>Track their progress in real-time.</p>
         <p className='my-m-0 h3 my-colorlightblue2'>Be part of the change.</p>
          <div className='my-min-content text-nowrap'>
-         <button className='Main-btn p-2 btn-font text-nowrap my-min-content m-3  '>Sign up</button>
-        <button className='Main-btn p-2 btn-font text-nowrap my-min-content m-3 font-weight-bold '>Login</button>
+         <button className='Main-btn p-2 btn-font text-nowrap my-min-content m-3  ' onClick={() => navigate('/signup')}>Sign up</button>
+        <button className='Main-btn p-2 btn-font text-nowrap my-min-content m-3  ' onClick={() => navigate('/login')}>Login</button>
          </div>
         </div>
       </div>

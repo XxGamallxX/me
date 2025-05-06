@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "homepage": "https://XxGamallxX.github.io/me",
   "type": "module",
+  "proxy": "http://localhost:7218",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +16,7 @@
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
+    "react-responsive": "^10.0.1",
     "react-router-dom": "^7.5.2",
     "uuid": "^11.1.0"
   },

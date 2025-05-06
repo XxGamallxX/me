@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="fileInput" accept="image/*" />
+    <button id="uploadBtn">Upload</button>
+    
+    <script>
+      document.getElementById('uploadBtn').addEventListener('click', () => {
+        const fileInput = document.getElementById('fileInput');
+        if (!fileInput.files.length) {
+          return alert('Please select a file first');
+        }
+    
+        const file = fileInput.files[0];
+    
+        // 1. Construct FormData and append the file
+        const formData = new FormData();
+        formData.append('image', file);            // 'image' is the field name your server expects
+        formData.append('userId', '12345');        // you can append additional fields if needed
+    
+        // 2. Make the fetch POST request
+        fetch('https://your.api.endpoint/upload', {
+          method: 'POST',
+          body: formData,
+          // Note: DO NOT set Content-Type header manually when sending FormData;
+          // the browser will add the correct multipart/form-data boundary for you.
+        })
+          .then(async (res) => {
+            if (!res.ok) {
+              const errorText = await res.text();
+              throw new Error(`Server error: ${errorText}`);
+            }
+            return res.json();
+          })
+          .then((data) => {
+            console.log('Upload success:', data);
+            // handle response data…
+          })
+          .catch((err) => {
+            console.error('Upload failed:', err);
+          });
+      });
+    </script>
+    
+</body>
+</html>
