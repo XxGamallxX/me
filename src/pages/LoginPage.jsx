@@ -41,11 +41,9 @@ const LoginPage = () => {
 
   return (
     <>
-        <div className='myauthbg d-flex align-items-center justify-content-center '>
-    <MediaQuery minWidth={1224}>
-       <h1 className='m-3 mt-5 align-self-start text-white'><strong>RAFEEQ</strong></h1>
-    </MediaQuery>
-      <div className="w-75 h-75 form-container d-flex my-auto justify-content-center align-items-center "> 
+        <div className='myauthbg d-flex align-items-center justify-content-center flex-nowrap '>
+
+      <div className="w-75 py-5 form-container d-flex my-auto justify-content-center align-items-center "> 
       <div className="w-75 h-max-content"> 
                 <h2 className="card-title "><strong>Login</strong></h2>
                 <p className='m-0 py-2'>Your city needs you — log in and take action</p>
@@ -80,7 +78,7 @@ const LoginPage = () => {
                     />
                   </div>
                   <div className="d-grid">
-                    <button type="submit" className="Main-btn mx-auto">Login</button>
+                    <button type="submit" className="Main-btn mx-auto py-2">Login</button>
                   </div>
                 </form>
                 <div className="text-center mt-3">

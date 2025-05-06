@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './ProfilePopup.module.css';
 
-const ProfilePopup = () => {
+const Profile = () => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -37,4 +37,4 @@ const ProfilePopup = () => {
   );
 };
 
-export default ProfilePopup;
+export default Profile;

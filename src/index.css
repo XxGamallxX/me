@@ -98,6 +98,19 @@ height: 90%;
   cursor: pointer;
 }
 
+.font-20 {
+  font-size: 1.25rem;
+}
+
+
+.w-90{
+  width: 90%;
+}
+
+
+#my-container{
+  width: 50% !important;
+}
 
 
 
@@ -110,3 +123,22 @@ height: 90%;
     }
   }
 
+
+  @media (max-width: 576px) {
+
+    #my-container{
+      width: 90% !important;
+    }
+
+
+  }
+
+
+  @media (max-width: 1000px) {
+
+    #my-container{
+      width: 70% !important;
+    }
+
+
+  }
