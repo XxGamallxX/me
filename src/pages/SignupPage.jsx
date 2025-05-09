@@ -2,7 +2,7 @@ import  "./SignupPage.css";
 import { useState } from 'react';
 import MediaQuery from "react-responsive";
 import { NavLink, useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+
 
 
 

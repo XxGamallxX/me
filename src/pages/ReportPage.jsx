@@ -58,10 +58,18 @@ const ReportPage = () => {
 
   return (
     <>
+        <div className="BgReport container-fluid vh-100 d-grid align-items-center grid-report-layout ">
+          <div className="row-sm position-relative w-50 mx-auto h-fit-content mt-5  ">
+            <div className="progress-line "></div>
+            <div className="progress-circles px-0">
+              <div className="progress-bar-uncheck-circle"></div>
+              <div className="progress-bar-uncheck-circle"></div>
+              <div className="progress-bar-uncheck-circle"></div>
+            </div>
+          </div>
       {step === 1 && (
-        <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center vw-100">
-          <div className=" form-container justify-content-center p-5 row flex-grow w-50">
-            <form onSubmit={handleSubmit}>
+          <div className=" form-container justify-content-center p-5 row  w-50 mx-auto ">
+            <form onSubmit={handleSubmit} className="">
               <h1 className="text-center"><strong>Submit Your Report</strong></h1>
 
               <div className="mt-3">
@@ -108,20 +116,20 @@ const ReportPage = () => {
               </div>
 
               <div className="d-flex justify-content-center pt-4">
-                <button type="submit" className="Main-btn mx-auto" onClick={() => setStep(2)}>Next</button>
+                <button type="submit" className="Main-btn-small mx-auto px-4" onClick={() => setStep(2)}>Next</button>
               </div>
             </form>
           </div>
-        </div>
+        
       )}
 
       {step === 2 && (
-        <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center w-100">
-          <div className="card form-container justify-content-center py-5 row flex-grow">
+        
+          <div className="form-container justify-content-center p-5 row  w-50 mx-auto">
             
 
             <form onSubmit={handleSubmit}>
-              <h1>Submit Your Report</h1>
+              <h5 className="">Where is the issue?</h5>
               <div className="mt-3">
                 <img src="" alt="map" />
                 <button className="Main-btn">get your location</button>
@@ -143,14 +151,14 @@ const ReportPage = () => {
               </div>
               <div className="mt-3">
                 
-
-
-
               </div>
             </form>
+              <div>
+
+              </div>
           </div>
-        </div>
       )}
+      </div>
       <Footer/>
     </>
   );
