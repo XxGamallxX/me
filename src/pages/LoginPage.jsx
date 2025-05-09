@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import "./LoginPage.css";
-import MediaQuery from 'react-responsive';
+
 
 
 const LoginPage = () => {

@@ -1,12 +1,12 @@
+import Footer from "../components/landingpageCom/Footer";
 import "./ReportPage.css";
 import {useEffect , useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+
 
 const ReportPage = () => {
   const [step, setStep] = useState(1);
 
   const [ReportData, setReportData] = useState({
-    reportid: uuidv4(),
     issuename: "",
     issuedegree: "",
     comment: "",
@@ -26,6 +26,7 @@ const ReportPage = () => {
       ...ReportData,
       [name]: value,
     });
+    console.log(ReportData)
   };
 
   const handleSubmit = async (e) => {
@@ -58,10 +59,10 @@ const ReportPage = () => {
   return (
     <>
       {step === 1 && (
-        <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center w-100">
-          <div className="card form-container justify-content-center py-5 row flex-grow">
+        <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center vw-100">
+          <div className=" form-container justify-content-center p-5 row flex-grow w-50">
             <form onSubmit={handleSubmit}>
-              <h1><strong>Submit Your Report</strong></h1>
+              <h1 className="text-center"><strong>Submit Your Report</strong></h1>
 
               <div className="mt-3">
                 <label htmlFor="issuename" className="form-label">Issue Name</label>
@@ -150,6 +151,7 @@ const ReportPage = () => {
           </div>
         </div>
       )}
+      <Footer/>
     </>
   );
 };

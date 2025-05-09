@@ -39,6 +39,7 @@ html, body, #root {
 
   .form-container {
     background-color: #E5F0FB !important;
+    border-radius: 20px;
   }
 
   /* utility classes */
@@ -47,13 +48,21 @@ html, body, #root {
   color: #A8E8DF !important ;
   }
 
+  .my-color0A1F44{
+    color: #0A1F44 !important;
+  }
+
 
 .my-TrackReportCard{
   background-color: #EAF1FF !important;
   border-radius: 20px;
   border: #0A1F44 2px solid;
 }
-
+.my-TrackReportCardnav{
+  background-color: #EAF1FF !important;
+  border-radius: 20px;
+  border: #0A1F44 1px solid;
+}
   .my-Bgcolorlightblue1 {
     background-color: #C9D9F9 !important ;
   }
@@ -74,6 +83,17 @@ html, body, #root {
 
   .h-90{
 height: 90%;
+  }
+  .vh-75{
+    height: 75vh;
+  }
+
+  .w-80{
+    width: 80% !important;
+  }
+
+  .font-32{
+    font-size: 2rem !important;
   }
 
   .h-max-content{
@@ -120,6 +140,12 @@ height: 90%;
   @media (max-width: 576px) , (max-height: 576px) {
     html {
       font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 900px)  {
+    html {
+      font-size: 0.8rem;
     }
   }
 

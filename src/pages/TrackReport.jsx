@@ -24,6 +24,21 @@
        region: 'Giza',
        government: 'Transport Authority',
      },
+
+          {
+       issuename: 'Air Pollution',
+       issuedegree: 'High',
+       comment: 'Needs immediate attention',
+       region: 'Cairo',
+       government: 'Ministry of Environment',
+     },
+     {
+       issuename: 'Traffic Congestion',
+       issuedegree: 'Medium',
+       comment: 'Peak hours problematic',
+       region: 'Giza',
+       government: 'Transport Authority',
+     },
      
    ];
 
@@ -32,7 +47,7 @@
 
 //   const getreportdata = await fetch("https://localhost:7218/api/user/{id}/reports"),
 // .then(res => res.json())
-// .then(console.log);
+// .then(console.log(res));
 
 
 
@@ -73,11 +88,11 @@
 ) : (
 <>
 
-  <div className='d-flex my-TrackReportCard align-items-center '>
+  <div className='d-flex my-TrackReportCardnav align-items-center mb-3 '>
     <img src="./Rafeeq/back-btn.png" alt="back button" className='h6 m-0 crusor-pointer' />
     <h3 className='m-0 px-1'><strong >Track Report</strong></h3>
   </div>
-  <div className=''>
+  <div className='overflow-scroll vh-75'>
          {reports.map((issue, index) => (
            <div key={index} className='my-TrackReportCard p-3 my-3'>
              <h3>{issue.issuename}</h3>

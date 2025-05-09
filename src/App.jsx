@@ -11,6 +11,7 @@ import ReportPage from './pages/ReportPage';
 import TrackReport from './pages/TrackReport';
 
 function App() {
+
   return (
     <Router>
 
@@ -19,8 +20,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/Submit Report" element={<ReportPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
           <Route path='/Track Report' element={<TrackReport />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
  
     </Router>

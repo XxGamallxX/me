@@ -10,25 +10,26 @@ const Navbar = () => {
     };
   
     return (
-      <nav className="navbar navbar-expand-md my-BgColorblue px-4 shadow-sm fixed-top">
-        <div className="container-fluid">
+      
+      <nav className="navbar navbar-expand-md my-BgColorblue px-4 shadow-sm fixed-top pb-0 d-flex ">
+        <div className="container-fluid align-content-end">
           {/* Logo Text */}
-          <span className="navbar-brand fw-bold text-white">RAFEEQ</span>
+          <h1 className=" fw-bold text-white mb-0">RAFEEQ</h1>
   
           {/* Right Links */}
           <ul className="navbar-nav ms-auto d-flex flex-row gap-3">
             <li className="nav-item">
-              <button className="btn btn-link nav-link text-light font-weight-light " onClick={() => scrollToSection('Home')}>
+              <button className="btn btn-link nav-link text-light font-weight-light font-32 pb-0" onClick={() => scrollToSection('Home')}>
                 Home
               </button>
             </li>
             <li className="nav-item">
-              <button className="btn btn-link nav-link text-light font-weight-light " onClick={() => scrollToSection('AboutUs')}>
+              <button className="btn btn-link nav-link text-light font-weight-light font-32 pb-0" onClick={() => scrollToSection('AboutUs')}>
                 About us
               </button>
             </li>
             <li className="nav-item">
-              <button className="btn btn-link nav-link text-light font-weight-light " onClick={() => scrollToSection('WhyToUse')}>
+              <button className="btn btn-link nav-link text-light font-weight-light font-32 pb-0" onClick={() => scrollToSection('WhyToUse')}>
                 Why to use?
               </button>
             </li>
