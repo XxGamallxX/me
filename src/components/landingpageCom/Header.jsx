@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-//delete
+
   useEffect(() => {
     const currentUser = localStorage.getItem('currentUser');
     if (currentUser) {

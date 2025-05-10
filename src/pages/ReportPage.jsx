@@ -1,4 +1,5 @@
 import Footer from "../components/landingpageCom/Footer";
+import Navbar from "../components/landingpageCom/NavBar";
 import "./ReportPage.css";
 import {useEffect , useState } from "react";
 
@@ -57,9 +58,10 @@ const ReportPage = () => {
   // };
 
   return (
-    <>
+    <> 
+       <Navbar/>
         <div className="BgReport container-fluid vh-100 d-grid align-items-center grid-report-layout ">
-          <div className="row-sm position-relative w-50 mx-auto h-fit-content mt-5  ">
+          <div className="row-sm position-relative w-50 mx-auto  mt-5  ">
             <div className="progress-line "></div>
             <div className="progress-circles px-0">
               <div className="progress-bar-uncheck-circle"></div>
@@ -67,8 +69,13 @@ const ReportPage = () => {
               <div className="progress-bar-uncheck-circle"></div>
             </div>
           </div>
+          <div className="row-sm d-flex justify-content-between mx-auto w-50 mb-3 "> 
+            <div>Step 1</div>
+            <div>Step 2</div>
+            <div>Step 3</div>
+          </div>
       {step === 1 && (
-          <div className=" form-container justify-content-center p-5 row  w-50 mx-auto ">
+          <div className=" form-container justify-content-center p-5 row  w-50 mx-auto align-self-start ">
             <form onSubmit={handleSubmit} className="">
               <h1 className="text-center"><strong>Submit Your Report</strong></h1>
 

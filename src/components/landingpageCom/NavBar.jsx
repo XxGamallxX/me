@@ -32,6 +32,7 @@ const Navbar = () => {
               <button className="btn btn-link nav-link text-light font-weight-light font-32 pb-0" onClick={() => scrollToSection('WhyToUse')}>
                 Why to use?
               </button>
+
             </li>
           </ul>
         </div>

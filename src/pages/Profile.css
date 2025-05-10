@@ -1,0 +1,34 @@
+.profile-container-left{
+    padding: 1.5rem 4rem 1.5rem 1rem !important;
+    border-radius:12px  ;
+    width: 60%;
+}
+
+.profile-container-right{
+    border-radius:12px  ;
+  
+}
+.profile-grid-layout {
+    grid-template-columns: 1fr 1fr  ;
+    
+}
+
+.bg-container-profile{
+    background-image: url("./Rafeeq/bg-profile-container.jpg");
+    background-size: cover ;
+    
+}
+
+.btn-profile{
+    background-color: #2489FF;
+    border-radius: 6px;
+    color: white;
+}
+
+.btn-profile-left:hover{
+    background-color: #F9FAFB !important;
+}
+
+.mb-0{
+    margin-bottom: 0 !important;
+}

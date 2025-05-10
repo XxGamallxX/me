@@ -26,7 +26,7 @@
 }
 
 .grid-report-layout{
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content max-content 1fr;
 }
 
 .input-report-location{

@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ReportPage from './pages/ReportPage';
 import TrackReport from './pages/TrackReport';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/Submit Report" element={<ReportPage />} />
           <Route path='/Track Report' element={<TrackReport />} />
+          <Route path='/Profile' element={<Profile />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
  
