@@ -15,8 +15,8 @@ import "./Profile.css"
 export default function Profile() {
 
 const userdata = {
-    name : "gamal" ,
-    email : "gamalmicheal@gmail.com",
+    name : "mark" ,
+    email : "mark@gmail.com",
     phone : "01209805254",
     birthdate : "1/9/2000" ,
 }
@@ -39,7 +39,7 @@ const userdata = {
                 </div>
             </div>
 
-            <div className=" col w-75 p-4 bg-container-profile profile-container-right">
+            <div className=" col w-75 p-5 bg-container-profile profile-container-right">
              
                 <div className="bg-white p-2 profile-container-right ">
                   <h6 className="mb-0">{userdata.name}</h6>
@@ -58,7 +58,7 @@ const userdata = {
                         <input className="w-100 border-0 p-3 " type="date" placeholder="Birthdate"></input>
                         <hr className="m-0 mx-2" />
                     </div>
-                    <button className="btn-profile border-0 my-4 px-4 py-2 ">Save Changes</button>
+                    <button className="btn-profile border-0 mt-4 px-4 py-2 ">Save Changes</button>
                 </form>
 
             </div>

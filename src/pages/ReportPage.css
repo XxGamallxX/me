@@ -7,6 +7,20 @@
 
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.select-input{
+height: 56;
+gap: 16px;
+border-radius: 5px;
+padding: 10px;
+
+}
+
+
+
 
 .progress-line {
   position: absolute;
@@ -32,4 +46,9 @@
 .input-report-location{
     border-radius: 5px;
     box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bg-submitreport-container{
+  background-image: url("./Rafeeq/bg-profile-container.jpg");
+  background-size: cover;
 }
