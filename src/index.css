@@ -42,15 +42,26 @@ html, body, #root {
     border-radius: 20px;
   }
 
-  /* utility classes */
-  /* colors */
-  .my-colorlightblue1 {
-  color: #A8E8DF !important ;
-  }
+  
+.my-Blacklink{
+  color: black;
+}
 
-  .my-color0A1F44{
-    color: #0A1F44 !important;
-  }
+
+
+.myauthbg {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./public/Rafeeq/BgAuth.png');
+  background-size: cover;   
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.my-text-shadow {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) ;
+}
 
 
 .my-TrackReportCard{
@@ -63,6 +74,18 @@ html, body, #root {
   border-radius: 20px;
   border: #0A1F44 1px solid;
 }
+  /* utility classes */
+  /* colors */
+  .my-colorlightblue1 {
+  color: #A8E8DF !important ;
+  }
+
+  .my-color0A1F44{
+    color: #0A1F44 !important;
+  }
+
+
+
   .my-Bgcolorlightblue1 {
     background-color: #C9D9F9 !important ;
   }
