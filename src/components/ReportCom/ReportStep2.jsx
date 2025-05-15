@@ -19,8 +19,8 @@ function ReportStep2() {
   }
   return (
     <><form ></form>
-      <div className="w-100 bg-white d-grid justify-center ">
-        <div className="row">
+      <div className="w-100 bg-white justify-center ">
+        <div className="">
           <div
             className={`drop-zone ${isDragging ? "dragging" : ""}`}
             onDragOver={handleDragOver}

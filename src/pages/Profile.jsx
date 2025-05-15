@@ -1,19 +1,15 @@
 
+import { createContext, useState } from "react";
 import "./Profile.css"
-
-
-
-
-
-
-
-
+import { useAuthContext } from "../usecontext/authcontext";
 
 
 
 
 export default function Profile() {
+ const [isVisible, setIsVisible] = useState(true);
 
+ const { logout } = createContext(useAuthContext)
 const userdata = {
     name : "mark" ,
     email : "mark@gmail.com",
@@ -21,29 +17,38 @@ const userdata = {
     birthdate : "1/9/2000" ,
 }
 
+const handleLogout = () => {
+  const confirmLogout = window.confirm("Are you sure you want to log out?");
+  if (confirmLogout) {
+    logout
+  }
+};
 
-
+  
 
     return (
         <>
         <div className="vh-100 d-grid justify-content-center align-items-center profile-grid-layout  BgReport">
             <div className=" bg-white mx-auto justify-between profile-container-left h-max-content">
                 <div className=" col  ">
+                    
                     <h6 className="mb-0">{userdata.name}</h6>
                     <p className="mb-0">{userdata.email}</p>
                     <hr />
                   <div className="d-flex flex-column">
-                    <button className="btn-profile-left bg-white text-start border-0 py-2 px-0"><img className="px-2" src="./Rafeeq/user-01.png" alt="" />My Profile</button>
-                    <button className="btn-profile-left bg-white text-start border-0 py-2 px-0 mt-2"><img className="px-2" src="./Rafeeq/log-out-04.png" alt="" />Logout</button>
+                    <button onClick={() => setIsVisible(!isVisible)} className="btn-profile-left bg-white text-start border-0 py-2 px-0"><img className="px-2" src="./Rafeeq/user-01.png" alt="" />My Profile</button>
+                    <button onClick={handleLogout} className="btn-profile-left bg-white text-start border-0 py-2 px-0 mt-2"><img className="px-2" src="./Rafeeq/log-out-04.png" alt="" />Logout</button>
                     </div>
                 </div>
             </div>
+            {isVisible && (
 
             <div className=" col w-75 p-5 bg-container-profile profile-container-right">
              
-                <div className="bg-white p-2 profile-container-right ">
-                  <h6 className="mb-0">{userdata.name}</h6>
-                  <h6 className="mb-2">{userdata.email}</h6>
+                <div className="bg-white p-2 profile-container-right d-flex flex-column">
+                 
+                  <div className="d-flex justify-content-between"><h6 className="mb-0">{userdata.name} </h6><img src="/Rafeeq/x.svg" alt="x icon "className="color-1F2937 crusor-pointer"  onClick={() => setIsVisible(!isVisible)}/></div>
+                  <h6 className="mb-2" >{userdata.email}</h6>
                   <hr className="mb-1 " />
                 </div>
 
@@ -62,6 +67,7 @@ const userdata = {
                 </form>
 
             </div>
+            )}
 
 
         </div>

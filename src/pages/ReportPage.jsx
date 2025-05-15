@@ -1,20 +1,30 @@
 import Footer from "../components/landingpageCom/Footer";
 import Navbar from "../components/landingpageCom/NavBar";
+import ReportDone from "../components/ReportCom/ReportDone";
 
 import "./ReportPage.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ReportPage = () => {
   const [step, setStep] = useState(1);
+  const [imageUrl, setImageUrl] = useState("");
+  const [isDragging, setIsDragging] = useState(false);
+  const [Errors, setErrors] = useState({});
 
   const [ReportData, setReportData] = useState({
     issuename: "",
     issuedegree: "",
     comment: "",
     streetName: "",
-    link: "",
+    link: imageUrl,
+    latitude: "",
+    longitiude: "",
+    governement: "",
+    region: "" ,
   });
 
+
+  //handle data
   const handleChange = (e) => {
     const { name, value } = e.target;
     setReportData({
@@ -26,33 +36,61 @@ const ReportPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
   };
 
 
-  const getlocation = () => {
 
+  //image section
+
+  async function uploadImage(files) {
+    console.log(files);
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "ghdr54sw6s");
+
+    fetch("https://api.cloudinary.com/v1_1/dx74fe71q/image/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => setImageUrl(data.url))
+      .catch((error) => console.error(error));
   }
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  //get location
+
+  const getlocation = () => {};
 
   return (
     <>
       <Navbar />
-      <div className="BgReport container-fluid vh-100 d-grid align-items-center grid-report-layout mt-5">
-        <div className="row-sm position-relative w-50 mx-auto  mt-5  ">
+      <div className="BgReport container-fluid vh-100 d-grid align-items-center grid-report-layout  mt-report">
+        <div className="row-sm position-relative w-65 mx-auto  mt-5  ">
           <div className="progress-line "></div>
           <div className="progress-circles px-0">
-            <div className="progress-bar-uncheck-circle"></div>
-            <div className="progress-bar-uncheck-circle"></div>
-            <div className="progress-bar-uncheck-circle"></div>
+            <div className={step >=1 ? "progress-bar-check-circle" : "progress-bar-uncheck-circle"}></div>
+            <div className={step >=2 ? "progress-bar-check-circle" : "progress-bar-uncheck-circle"}></div>
+            <div className={step === 3 ? "progress-bar-check-circle" : "progress-bar-uncheck-circle"}></div>
           </div>
         </div>
-        <div className="row-sm d-flex justify-content-between mx-auto w-50 mb-3 ">
+        <div className="row-sm d-flex justify-content-between mx-auto w-65 mb-3 ">
           <div>Step 1</div>
           <div>Step 2</div>
           <div>Step 3</div>
         </div>
         {step === 1 && (
-          <div className=" form-container justify-content-center p-5 row  w-50 mx-auto align-self-start">
-            <form onSubmit={handleSubmit} className="">
+          <div className="d-flex form-container justify-content-center p-5 row  w-65 mx-auto align-self-start h-75">
+            <form onSubmit={handleSubmit} className="justify-self-center">
               <h1 className="text-center">
                 <strong>Submit Your Report</strong>
               </h1>
@@ -66,13 +104,11 @@ const ReportPage = () => {
                   id="issuename"
                   name="issuename"
                   onChange={handleChange}
-                  className="form-control input-shadowbox"
+                  className="form-control input-report1"
                   value={ReportData.issuename}
                   required
                 />
               </div>
-
-            
 
               <div className="mt-3">
                 <label htmlFor="comment" className="form-label">
@@ -82,7 +118,7 @@ const ReportPage = () => {
                   type="text"
                   id="comment"
                   name="comment"
-                  className="form-control input-shadowbox"
+                  className="form-control input-report1"
                   onChange={handleChange}
                   value={ReportData.comment}
                   required
@@ -103,45 +139,98 @@ const ReportPage = () => {
         )}
 
         {step === 2 && (
-          <div className="bg-submitreport-container form-container justify-content-center p-5 row  w-50 mx-auto">
-            <form onSubmit={handleSubmit}>
-              <h5 className="fs-4">
-                <b>Where is the issue?</b>
-              </h5>
-              <div className="mt-3">
-                <button className="Main-btn w-100" onClick={getlocation}>get your location</button>
+          <>
+            <div className="row align-self-start justify-content-center " style={{ columnGap: "3px" }}>
+              <div className="col-md-5 form-container my-colorCCE3FF ">
+                <img
+                  src="./Rafeeq/location.jpg"
+                  alt=""
+                  className="w-100 mt-2 p-2  form-container"
+                />
               </div>
-              <div className="mt-3">
-                <label htmlFor="streetName" className="form-label fs-4">
-                  <b> Street Name</b>
-                </label>
-                <input
-                  name="streetName"
-                  className="form-control input-shadowbox"
-                  required
-                  placeholder="Street Name"
-                ></input>
+
+              <div className="bg-submitreport-container form-container  p-5 col-md-5 ">
+                <form onSubmit={handleSubmit} className="mt-5">
+                  <h5 className="fs-4">
+                    <b>Where is the issue?</b>
+                  </h5>
+                  <div className="mt-3">
+                    <button
+                      className="Main-btn w-100 py-2 rounded-pill "
+                      onClick={getlocation}
+                    >
+                      Set your location
+                    </button>
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="streetName" className="form-label fs-4">
+                      <b> Street Name</b>
+                    </label>
+                    <input
+                      name="streetName"
+                      className="form-control input-shadowbox2 py-3"
+                      required
+                      placeholder="Street Name"
+                    ></input>
+                  </div>
+                  <div className="mt-1 d-flex  gap">
+                    <select
+                      name=""
+                      id=""
+                      className="select-input flex-grow-1 border-0 input-shadowbox2 custom-select py-3"
+                    >
+                      <option disabled selected hidden value="">Region Name </option>
+                    </select>
+                    <select
+                      name=""
+                      id=""
+                      className="select-input flex-grow-1 border-0 gap input-shadowbox2 custom-select py-3"
+                    >
+                      <option value="">Government</option>
+                    </select>
+                  </div>
+                  <div className="mt-2">
+                    <button
+                      type="submit"
+                      className="Main-btn mx-auto px-4 w-100 "
+                      onClick={() => setStep(3)}
+                    >
+                      Next
+                    </button>
+                  </div>
+                </form>
               </div>
-              <div className="mt-1 d-flex justify-content-between">
-                <select name="" id="" className="select-input">
-                  <option value="">Region Name</option>
-                </select>
-                <select name="" id="" className="select-input">
-                  <option value="">Government</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="Main-btn-small mx-auto px-4"
-                onClick={() => setStep(2)}
-              >
-                Next
-              </button>
-            </form>
-            <div></div>
-          </div>
+            </div>
+          </>
         )}
-        {step === 3 && <div></div>}
+        {step === 3 && (
+          // <div
+          //   className={`drop-zone ${isDragging ? "dragging" : ""} row justify-content-center align-self-start mygap-100 w-75 mx-auto`}
+          //   // onDragOver={handleDragOver}
+          //   // onDragLeave={handleDragLeave}
+          //   // onDrop={handleDrop}
+          // >
+          //   <div className="image-input-container col-md-5 ">
+          //     <input
+          //       type="file"
+          //       id="fileInput"
+          //       // onChange={handleFileChange}
+          //       className="file-input"
+          //     />
+          //     <label htmlFor="fileInput" className="d-flex flex-column  p-5">
+          //       <img src="/Rafeeq/material-symbols_upload (1).png" alt="Upload icon"  className="img-icon-size mx-auto"/>
+          //       <span className="text-center border-20 my-color0A1F44 fw-bold fs-4 my-4">Upload photo here</span>
+          //       <span className="text-center border-20 fs-5 my-3 mb-4 mt-0">or</span>
+          //       <div className="text-center  fs-5 "><span className="p-2 bg-white border-20 d-inline-block">Browse</span></div>
+          //     </label>
+          //   </div>
+          //   <div className="col-md-5 image-input-container">
+          //     <div className="text-center mt-5 mb-4"><img src="/Rafeeq/camera.png" alt="Camera icon" className="" /></div>
+          //     <div className="text-center  fs-5 "><span className="p-2 bg-white border-20 d-inline-block">Take photo</span></div>
+          //   </div>
+          // </div>
+          <ReportDone/>
+        )}
       </div>
       <Footer />
     </>

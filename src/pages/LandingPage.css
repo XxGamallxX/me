@@ -20,12 +20,12 @@
 }
 
 .btn-landpage{
-width: max-content;
-height: max-content;
-border-radius: 1.25rem;
-gap: .625rem;
-padding: .625rem;
-border: 0 !important;
+width: 216;
+height: 53;
+
+border-radius: 20px;
+padding: 10px;
+gap: 10px;
 
 }
 

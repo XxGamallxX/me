@@ -7,19 +7,47 @@
 
 }
 
+.progress-bar-check-circle{
+  background: url("./Rafeeq/check.png");
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
 input[type="file"] {
   display: none;
 }
 
+.custom-select{
+appearance: none;
+
+background-image: url("./Rafeeq/arrow-down.svg");
+ background-repeat: no-repeat, no-repeat;
+ background-position: 180px center,  center;
+ cursor: pointer;
+}
+
+.image-input-container{
+  background-color: transparent;
+  box-shadow: inset 0 0 0 5px white !important;
+  border-radius: 20px;
+}
+
 .select-input{
-height: 56;
-gap: 16px;
+
 border-radius: 5px;
 padding: 10px;
 
+
 }
 
+ .mt-report{
+  margin-top: 128px !important;
+ }
 
+div.bg-submitreport-container.form-container {
+  height: 550px;
+}
 
 
 .progress-line {
@@ -49,6 +77,12 @@ padding: 10px;
 }
 
 .bg-submitreport-container{
-  background-image: url("./Rafeeq/bg-profile-container.jpg");
+  background-image: url("./Rafeeq/bg-submitreport-container.jpg");
   background-size: cover;
 }
+
+.img-icon-size{
+width: 121px;
+height: 121px;
+}
+
