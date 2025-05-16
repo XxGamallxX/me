@@ -15,7 +15,7 @@ export default function ProtectedRoute({ children }) {
   }, [isLoggedIn, loading]);
 
   if (loading) {
-    return <div>Loading...</div>; // Optional spinner or placeholder
+    return <div>Loading.........</div>;
   }
 
   if (showRedirect) {

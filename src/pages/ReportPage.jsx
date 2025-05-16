@@ -35,16 +35,21 @@ const ReportPage = () => {
 
   const validateStep1 = (e) => {
     e.preventDefault();
-    const newErrors = {};
-    if (!ReportData.issuename.trim()) {
-      newErrors.issuename = "Issue name is required";
 
+    if (!ReportData.issuename) {
+      console.log("")
+      alert("Full name is required");
       return;
     }
-    if (!ReportData.comment.trim()) {
-      newErrors.comment = "Issue description is required";
+
+    if (!ReportData.comment) {
+      Errors.comment = "Issue description is required";
+      alert("hi");
       return;
     }
+
+    // If no errors, proceed
+    alert("Form is valid. Submitting...");
 
     setStep(2);
   };
@@ -78,7 +83,6 @@ const ReportPage = () => {
   //image section
 
   async function uploadImage(files) {
-    console.log(files);
     const formData = new FormData();
     formData.append("file", files[0]);
     formData.append("upload_preset", "ghdr54sw6s");
@@ -87,6 +91,7 @@ const ReportPage = () => {
       method: "POST",
       body: formData,
     })
+    console.log(res.jso)
       .then((res) => res.json())
       .then((data) => setImageUrl(data.url))
       .catch((error) => console.error(error));
@@ -124,9 +129,8 @@ const ReportPage = () => {
           .then((data) => {
             setImageUrl(data.url);
             console.log("Image URL:", data.url);
-            console.log(imageUrl)
+            console.log(imageUrl);
           })
-
           .catch((error) => console.error(error));
       }
     }
@@ -210,7 +214,7 @@ const ReportPage = () => {
                   onChange={handleChange}
                   className="form-control input-report1"
                   value={ReportData.issuename}
-                  required
+                  
                 />
               </div>
 
@@ -342,6 +346,8 @@ const ReportPage = () => {
                     className="form-control input-shadowbox2 py-3"
                     required
                     placeholder="Street Name"
+                    onChange={handleChange}
+                    value={ReportData.streetName}
                   ></input>
                 </div>
                 <div className="mt-1 d-flex  gap">

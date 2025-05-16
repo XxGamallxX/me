@@ -4,6 +4,7 @@ import "./Profile.css";
 import { useauthContext } from "../context/authcontext"; 
 import Footer from "../components/landingpageCom/Footer";
 import Navbar from "../components/landingpageCom/NavBar";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -12,6 +13,7 @@ import Navbar from "../components/landingpageCom/NavBar";
 export default function Profile() {
  const [isVisible, setIsVisible] = useState(true);
 const { logout } = useauthContext();
+const navigate = useNavigate()
 
 const userdata = {
     name : "mark" ,
@@ -24,6 +26,8 @@ const handleLogout = () => {
   const confirmLogout = window.confirm("Are you sure you want to log out?");
   if (confirmLogout) {
     logout();
+    navigate('/')
+    
 
   }
 };
