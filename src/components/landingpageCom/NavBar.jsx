@@ -13,6 +13,20 @@ const Navbar = () => {
     }
   };
 
+   const handleScrollTo = (sectionId) => {
+    if (location.pathname === '/') {
+      console.log(location.pathname)
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+    
+      navigate('/', { state: { scrollTo: sectionId } });
+    }
+  };
+
+  
   
 
   return !isLoggedIn ? (
@@ -26,7 +40,7 @@ const Navbar = () => {
           <li className="nav-item">
             <button
               className="btn btn-link nav-link text-light fw-light font-32 pb-0"
-              onClick={() => scrollToSection("Home")}
+              onClick={() => handleScrollTo("Home")}
             >
               Home
             </button>

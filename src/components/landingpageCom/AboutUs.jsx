@@ -10,8 +10,8 @@ return (
 
     <div className="container w-75 p-3 my-Vh75 d-flex justify-content-center align-items-center" id="AboutUs">
         <div className="text-center">
-            <h1>About us</h1>
-            <p>
+            <h1 className="font-36">About us</h1>
+            <p className="fs-4">
                 Rafeeq is a smart road ticketing system designed to enhance communication between citizens and the government.
                 Through our intuitive app, users can easily report road damages or hazards,
                 ensuring swift government action to maintain road safety and quality.
