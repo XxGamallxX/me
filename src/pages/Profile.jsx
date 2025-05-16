@@ -1,15 +1,18 @@
 
-import { createContext, useState } from "react";
-import "./Profile.css"
-import { useAuthContext } from "../usecontext/authcontext";
+import { useState } from "react";
+import "./Profile.css";
+import { useauthContext } from "../context/authcontext"; 
+import Footer from "../components/landingpageCom/Footer";
+import Navbar from "../components/landingpageCom/NavBar";
+
 
 
 
 
 export default function Profile() {
  const [isVisible, setIsVisible] = useState(true);
+const { logout } = useauthContext();
 
- const { logout } = createContext(useAuthContext)
 const userdata = {
     name : "mark" ,
     email : "mark@gmail.com",
@@ -20,7 +23,8 @@ const userdata = {
 const handleLogout = () => {
   const confirmLogout = window.confirm("Are you sure you want to log out?");
   if (confirmLogout) {
-    logout
+    logout();
+
   }
 };
 
@@ -28,12 +32,13 @@ const handleLogout = () => {
 
     return (
         <>
-        <div className="vh-100 d-grid justify-content-center align-items-center profile-grid-layout  BgReport">
+        <Navbar />
+        <div className="vh-100 d-grid justify-content-center align-items-center profile-grid-layout  BgReport mt-fornav">
             <div className=" bg-white mx-auto justify-between profile-container-left h-max-content">
                 <div className=" col  ">
                     
                     <h6 className="mb-0">{userdata.name}</h6>
-                    <p className="mb-0">{userdata.email}</p>
+                    <p className="mb-0 fw-light">{userdata.email}</p>
                     <hr />
                   <div className="d-flex flex-column">
                     <button onClick={() => setIsVisible(!isVisible)} className="btn-profile-left bg-white text-start border-0 py-2 px-0"><img className="px-2" src="./Rafeeq/user-01.png" alt="" />My Profile</button>
@@ -48,7 +53,7 @@ const handleLogout = () => {
                 <div className="bg-white p-2 profile-container-right d-flex flex-column">
                  
                   <div className="d-flex justify-content-between"><h6 className="mb-0">{userdata.name} </h6><img src="/Rafeeq/x.svg" alt="x icon "className="color-1F2937 crusor-pointer"  onClick={() => setIsVisible(!isVisible)}/></div>
-                  <h6 className="mb-2" >{userdata.email}</h6>
+                  <h6 className="mb-2 fw-light" >{userdata.email}</h6>
                   <hr className="mb-1 " />
                 </div>
 
@@ -72,7 +77,7 @@ const handleLogout = () => {
 
         </div>
         
-        
+        <Footer/>
         
         
         </>

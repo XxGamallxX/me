@@ -1,10 +1,12 @@
 import { useState } from "react";
 import MediaQuery from "react-responsive";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useauthContext } from "../context/authcontext";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+    const { login } = useauthContext();
+  const [userData, setuserData] = useState({
     email: "",
     password: "",
   });
@@ -13,7 +15,7 @@ const LoginPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
+    setuserData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -25,14 +27,15 @@ const LoginPage = () => {
     // Get users from localStorage
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const user = users.find(
-      (u) => u.email === formData.email && u.password === formData.password
+      (u) => u.email === userData.email && u.password === userData.password
     );
 
     if (user) {
       // Store logged in user info
-      localStorage.setItem("currentUser", JSON.stringify(user));
+
+      login(user)
       alert("Login successful!");
-      navigate("/Landing-page");
+      navigate("/");
     } else {
       alert("Invalid email or password");
     }
@@ -66,7 +69,7 @@ const LoginPage = () => {
                   className="form-control my-input"
                   id="email"
                   name="email"
-                  value={formData.email}
+                  value={userData.email}
                   onChange={handleChange}
                   required
                 />
@@ -80,7 +83,7 @@ const LoginPage = () => {
                   className="form-control my-input"
                   id="password"
                   name="password"
-                  value={formData.password}
+                  value={userData.password}
                   onChange={handleChange}
                   required
                 />
@@ -94,7 +97,7 @@ const LoginPage = () => {
             <div className="text-center mt-3">
               <p>
                 Don't have an account?{" "}
-                <button className="btn btn-link">
+                <button className="btn">
                   <NavLink
                     to="/signup"
                     className="text-decoration-none color-1F2937"

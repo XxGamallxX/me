@@ -30,12 +30,13 @@ function ReportStep2() {
             <input
               type="file"
               id="fileInput"
-               onChange={(event) => {
-                uploadImage(event.target.files);
-              }}
+               
               className="file-input"
             />
-            <label htmlFor="fileInput" className="upload-label">
+            <label onChange={(event) => {
+                uploadImage(event.target.files);
+                
+              }}htmlFor="fileInput" className="upload-label">
               <img src="/upload-icon.png" alt="Upload" />
               <span>
                 {fileName || "Drag & drop or click to upload a photo"}

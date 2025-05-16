@@ -34,14 +34,15 @@ div.overflow-scroll{
   background-color: #081b3b; 
 }
 
-
-input,
-input:focus,
-input:active,
-input:hover {
-  background-color: white !important;
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
+select:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
 
   .Main-btn {
     width: 50%;
@@ -148,7 +149,7 @@ height: 51px;
 }
 
 .my-input{
-    border: #0A1F44 solid !important;
+    border: 1px #0A1F44  solid !important;
   }
   /* utility classes */
   /* colors */

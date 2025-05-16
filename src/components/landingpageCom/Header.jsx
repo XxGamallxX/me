@@ -26,15 +26,15 @@ const Home = () => {
     {isLoggedIn ? (
       <>
       <Navbar/>
-      <div className="container-fluid mt-6 vh-100 HomeBgImage d-flex justify-content-center align-items-center" id='Home'>
+      <div className="container-fluid mt-6 vh-100 HomeBgImage d-flex justify-content-center align-items-center mt-fornav" id='Home'>
         <div className='container  my-min-content'>
           <h1 className='mb-5 my-color0A1F44'><strong>Rafeeq</strong></h1>
           <p className='my-m-0 h3 my-colorlightblue2'>Report road issues around you.</p>
           <p className='my-m-0 h3 my-colorlightblue2'>Track their progress in real-time.</p>
           <p className='my-m-0 h3 my-colorlightblue2'>Be part of the change.</p>
-          <div className='mt-3 d-flex jutify-content-end'>
-            <button onClick={() => navigate('/Track Report')} className='btn-landpage shadow-box-btn-landpage border-0 fs-4 my-3 p-2 px-4 my-black '><strong>Track Report</strong></button>
-            <button onClick={() => navigate('/Submit Report')} className='btn-landpage shadow-box-btn-landpage border-0  fs-4 my-3 p-2 text-white mx-5 bgF28C28 '><strong>Submit Report</strong></button>
+          <div className='mt-3 d-flex justify-content-end'>
+            <button onClick={() => navigate('/Track-Report')} className='btn-landpage shadow-box-btn-landpage border-0 fs-4 my-3 p-2 px-4 my-black '><strong>Track Report</strong></button>
+            <button onClick={() => navigate('/Submit-Report')} className='btn-landpage shadow-box-btn-landpage border-0  fs-4 my-3 p-2 text-white mx-5 bgF28C28 '><strong>Submit Report</strong></button>
           </div>
 
         </div>
@@ -43,7 +43,7 @@ const Home = () => {
     ):(
     <>
       <Navbar/>
-      <div className="container-fluid mt-6 vh-100 HomeBgImage d-flex justify-content-center align-items-center" id='Home'>
+      <div className="container-fluid mt-6 vh-100 HomeBgImage d-flex justify-content-center align-items-center  " id='Home'>
       <div className='container  my-min-content'>
         <h1 className='mb-5 my-color0A1F44'><strong>Rafeeq</strong></h1>
         <p className='my-m-0 h3 fs-1 my-colorlightblue2'>Report road issues around you.</p>

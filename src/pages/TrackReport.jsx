@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/landingpageCom/NavBar";
+import Footer from "../components/landingpageCom/Footer";
 
 
 
@@ -45,19 +46,19 @@ const reports = [
 // )
 
 const TrackReport = () => {
-  
+
 const navigate = useNavigate();
   return (
     <>
       <Navbar />
-      <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center min-w-100 border-0 mt-5">
+      <div className="BgReport container-fluid vh-100 d-flex align-items-center justify-content-center min-w-100 border-0 mt-fornav">
         <div className=" form-container justify-content-center py-5 row flex-grow bg-transparent w-75">
           <div className="d-flex my-TrackReportCardnav align-items-center mb-3 ">
             <img
               src="./Rafeeq/back-btn.png"
               alt="back button"
               className="h6 m-0 crusor-pointer"
-              onClick={() => {navigate('/Landing-page')}}
+              onClick={() => {navigate('/')}}
             />
             <h2 className="m-0 px-2 py-1 my-color0A1F44 my-text-shadow">
               <strong>Track Report</strong>
@@ -85,6 +86,7 @@ const navigate = useNavigate();
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

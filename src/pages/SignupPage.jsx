@@ -59,8 +59,8 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password.length < 6) {
-      alert('Password must be at least 6 characters');
+    if (formData.password.length < 8) {
+      alert('Password must be at least 8 characters');
       return;
     }
     if (formData.password !== formData.confirmPassword) {
@@ -89,11 +89,11 @@ const SignupPage = () => {
         </MediaQuery>
 
         {step === 1 ? (
-          <div className='w-60 pt-4 h-75 form-container d-flex my-auto justify-content-center align-items-center overflow-auto'>
+          <div className='w-60 pt-4 h-90 form-container d-flex my-auto justify-content-center align-items-center overflow-auto'>
             <div className='w-75 h-max-content'>
               <form onSubmit={handleNext}>
                 <h3><strong>Welcome to Rafeeq!</strong></h3>
-                <h5>Together, we fix what matters. Sign up and get started.</h5>
+                <h5 className='py-4'>Together, we fix what matters. Sign up and get started.</h5>
 
                 <div className='mb-3'>
                   <label htmlFor='fullName' className='color-1F2937'>Full Name</label>
@@ -150,12 +150,12 @@ const SignupPage = () => {
                   </select>
                 </div>
 
-                <div className='d-grid'>
-                  <button type='submit' className='Main-btn mx-auto'>Next</button>
+                <div className='d-grid my-3'>
+                  <button type='submit' className='Main-btn mx-auto '>Next</button>
                 </div>
 
                 <div className='d-flex justify-content-center mt-1'>
-                  <p className='text-center'>
+                  <p className='text-center mb-0'>
                     Already have an account?{' '}
                     <NavLink to='/login' className='text-decoration-none color-1F2937'>Login</NavLink>
                   </p>
