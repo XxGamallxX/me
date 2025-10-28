@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import "./Profile.css";
-import { useauthContext } from "../context/authcontext"; 
+import { useauthContext } from "../context/AuthContext"; 
 import Footer from "../components/landingpageCom/Footer";
 import Navbar from "../components/landingpageCom/NavBar";
 import { useNavigate } from "react-router-dom";

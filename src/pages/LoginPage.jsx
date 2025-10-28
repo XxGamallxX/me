@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MediaQuery from "react-responsive";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useauthContext } from "../context/authcontext";
+import { useauthContext } from "../context/AuthContext";
 
 const LoginPage = () => {
   const navigate = useNavigate();

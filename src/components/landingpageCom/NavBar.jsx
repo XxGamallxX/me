@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useauthContext } from "../../context/authcontext";
+import { useauthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Navbar = () => {
         section.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-    
+     console.log(location.pathname)
       navigate('/', { state: { scrollTo: sectionId } });
     }
   };
@@ -40,7 +40,7 @@ const Navbar = () => {
           <li className="nav-item">
             <button
               className="btn btn-link nav-link text-light fw-light font-32 pb-0"
-              onClick={() => handleScrollTo("Home")}
+              onClick={() => scrollToSection("AboutUs")}
             >
               Home
             </button>
@@ -73,7 +73,7 @@ const Navbar = () => {
           <li className="nav-item">
             <button
               className="btn btn-link nav-link text-light fw-light font-32 py-0 lh-1"
-              onClick={() => scrollToSection("AboutUs")}
+              onClick={() => handleScrollTo("Home")}
             >
               Home
             </button>
