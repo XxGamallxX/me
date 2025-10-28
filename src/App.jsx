@@ -12,7 +12,7 @@ import TrackReport from "./pages/TrackReport";
 import Profile from "./pages/Profile";
 import NotFound from "./components/NotFound";
 
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 
 function App() {
