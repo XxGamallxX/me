@@ -60,7 +60,8 @@ const ReportPage = () => {
       newErrors.imageUrl = "Image is required";
     }
   };
-  const validateStep3 = () => {
+  const validateStep3 = (e) => {
+    e.preventDefault()
     const newErrors = {};
     if (!ReportData.streetName.trim()) {
       newErrors.streetName = "Street name is required";
@@ -288,7 +289,7 @@ const ReportPage = () => {
                   </label>
                 </div>
 
-                <div className="col-md-5 image-input-container">
+                <div className="col-md-5 crusor-pointer image-input-container">
                   <div className="text-center mt-5 mb-4">
                     <img
                       src="/Rafeeq/camera.png"
@@ -325,7 +326,7 @@ const ReportPage = () => {
             </div>
 
             <div className="bg-submitreport-container form-container  p-5 col-md-5 ">
-              <form onSubmit={handleSubmit} className="mt-5">
+              <form onSubmit={validateStep3} className="mt-5">
                 <h5 className="fs-4">
                   <b>Where is the issue?</b>
                 </h5>
@@ -359,6 +360,7 @@ const ReportPage = () => {
                     <option disabled selected hidden value="">
                       Region Name{" "}
                     </option>
+                    <option value="Region">Nile valley</option>
                   </select>
                   <select
                     name=""
@@ -366,6 +368,8 @@ const ReportPage = () => {
                     className="select-input flex-grow-1 border-0 gap input-shadowbox2 custom-select py-3"
                   >
                     <option value="">Government</option>
+                    <option value="value">Cairo</option>
+
                   </select>
                 </div>
                 <div className="mt-2">
